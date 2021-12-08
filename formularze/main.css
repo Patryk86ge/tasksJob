@@ -1,0 +1,25 @@
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+}
+.form__Box{
+    display: flex;
+    flex-direction: column;
+
+}
+.btn {
+    margin-top: 20px;
+}
+.hidden{
+    display: none;
+}
+p{
+    color: red;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}

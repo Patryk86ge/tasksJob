@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>formularz</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<section>
+  <form class="form__Book">
+    <div class="form__Box">
+      <label for="book__title">Tytuł książki
+        <input name="task" type="text" class="book__title" id="book__title">
+      </label>
+      <p class="book__title-validation validation hidden">pole jest wymagane</p>
+      <label for="author__Book">Autor książki
+        <input type="text" class="author__Book" id="author__Book">
+      </label>
+      <p class="author__Book-validation validation hidden">pole jest wymagane</p>
+      <label for="reading__priority">Priorytet przeczytania
+        <input type="number" class="reading__priority" id="reading__priority">
+      </label>
+      <p class="reading__priority-validation validation hidden">pole jest wymagane</p>
+      <label for="books__select">Listę z kategoriami
+        <select name="books" class="books__select" id="books__select">
+          <option value="">-------------Books-------------</option>
+          <option value="fantasy">Fantasy, Science fiction</option>
+          <option value="historyczna">Powieść historyczna</option>
+          <option value="przygodowa">Powieść przygodowa</option>
+        </select>
+      </label>
+      <p class="books__select-validation validation hidden">pole jest wymagane</p>
+      <button class="btn" type="submit">dodaj</button>
+    </div>
+  </form>
+    <ul class="add__task">
+    </ul>
+</section>
+<script type="module"  src="app.js"></script>
+</body>
+</html>

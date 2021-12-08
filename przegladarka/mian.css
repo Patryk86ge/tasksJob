@@ -1,0 +1,10 @@
+section {
+    text-align: center;
+}
+button  {
+    margin-bottom: 20px;
+}
+td {
+    display: flex;
+    flex-direction: column;
+}
