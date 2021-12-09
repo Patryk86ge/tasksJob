@@ -1,5 +1,5 @@
 const form = document.querySelector(".form__Book");
-const task = document.querySelector(".add__task");
+const taskAdd = document.querySelector(".add__task");
 
 const bookTitle = document.querySelector(".book__title")
 const bookTitleValidation = document.querySelector(".book__title-validation");
@@ -13,6 +13,10 @@ const readingPriorityValidation = document.querySelector(".reading__priority-val
 
 const booksSelect = document.querySelector(".books__select");
 const booksSelectValidation = document.querySelector(".books__select-validation");
+
+const messageError = document.querySelector(".error-message");
+const messageSuccess = document.querySelector(".success-message");
+
 
 bookTitle.addEventListener("keyup", ({target: {value}}) => {
   updateValidation(bookTitle, bookTitleValidation, value)
@@ -41,22 +45,23 @@ form.addEventListener("submit", (e) => {
 
   if (isBookTitleValid && isAuthorBookValid && isReadingPriorityValid && isBooksSelectValid) {
     alert("wysłano");
-    // const data = {
-    //   bookTitle: bookTitle.value,
-    //   authorBook: authorBook.value,
-    //   readingPriority: readingPriority.value,
-    //   bookSelect: booksSelect.value,
-    // }
-    const data = new FormData();
-    //
-    data.append("bookTytle",bookTitle.value);
-    data.append("autorBook",authorBook.value);
-    data.append("ReddingBook",readingPriority.value);
-    data.append("BoobkSelecet",booksSelect.value);
-
-    for(let el of data){
-      console.log(el);
+    const data = {
+      bookTitle: bookTitle.value,
+      authorBook: authorBook.value,
+      readingPriority: readingPriority.value,
+      bookSelect: booksSelect.value,
     }
+    console.log(data);
+    // const data = new FormData();
+    // //
+    // data.append("bookTytle",bookTitle.value);
+    // data.append("autorBook",authorBook.value);
+    // data.append("ReddingBook",readingPriority.value);
+    // data.append("BoobkSelecet",booksSelect.value);
+    //
+    // for(let el of data){
+    //   console.log(el);
+    // }
 
 
     // console.log(data);
@@ -76,11 +81,8 @@ form.addEventListener("submit", (e) => {
 
 })
 
-
-
-
 function updateValidation(el, validationEl, value) {
-  if (value){
+  if (value.length > 2){
     el.style.borderColor = "";
     validationEl.classList.add("hidden");
   }
