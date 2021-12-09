@@ -51,6 +51,11 @@ form.addEventListener("submit", (e) => {
       readingPriority: readingPriority.value,
       bookSelect: booksSelect.value,
     }
+    taskAdd.innerHTML
+    taskAdd.innerHTML = bookTitle.value;
+    taskAdd.innerHTML = authorBook.value
+    taskAdd.innerHTML = readingPriority.value
+    taskAdd.innerHTML = booksSelect.value
     console.log(data);
     // const data = new FormData();
     // //
@@ -82,7 +87,20 @@ form.addEventListener("submit", (e) => {
 })
 
 function updateValidation(el, validationEl, value) {
-  if (value.length > 2){
+  if (bookTitle.value.length >= 1) {
+    el.style.borderColor = "";
+    validationEl.classList.add("hidden");
+
+  }
+  if (authorBook.value.length >= 3) {
+    el.style.borderColor = "";
+    validationEl.classList.add("hidden");
+  }
+  if (typeof readingPriority === "number" && readingPriority.value.length >= 1 && readingPriority.value.length <= 3) {
+    el.style.borderColor = "";
+    validationEl.classList.add("hidden");
+  }
+  if (booksSelect.value) {
     el.style.borderColor = "";
     validationEl.classList.add("hidden");
   }
@@ -93,6 +111,8 @@ function updateValidation(el, validationEl, value) {
   console.log(value);
 
 }
+
+
 
 
 

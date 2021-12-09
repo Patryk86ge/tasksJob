@@ -26,11 +26,12 @@ const Quotations = () => {
     <ul>
       {
         data.map((el,index) => <li className="hidden" key={index}>{el.quote}{el.author}</li>)
+
       }
     </ul>
-
     </>
   );
+
 };
 
 export default Quotations;
