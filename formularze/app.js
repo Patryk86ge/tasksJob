@@ -51,6 +51,7 @@ form.addEventListener("submit", (e) => {
       readingPriority: readingPriority.value,
       bookSelect: booksSelect.value,
     }
+    window.localStorage.setItem("user",JSON.stringify(data))
     taskAdd.innerHTML
     taskAdd.innerHTML = bookTitle.value;
     taskAdd.innerHTML = authorBook.value
@@ -82,6 +83,7 @@ form.addEventListener("submit", (e) => {
     updateValidation(booksSelect, booksSelectValidation, booksSelect.value);
     alert("Niepoprawne dane");
   }
+
   form.reset();
 
 })
